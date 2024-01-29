@@ -30,6 +30,8 @@ jobs:
           echo "::set-output name=version::$version"
 
       - name: Create Tag
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git tag ${{ steps.version.outputs.version }}
           git push origin ${{ steps.version.outputs.version }}
