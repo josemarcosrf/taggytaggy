@@ -1,1 +1,1 @@
-from pingpong import __version__
+from pingpong.version import __version__
