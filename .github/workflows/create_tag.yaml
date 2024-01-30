@@ -50,7 +50,7 @@ jobs:
       - name: Create Tag
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        if: steps.pr-merged.outputs.is_merged == 'true' && steps.branch.output.branch == 'main'
+        if: steps.pr-merged.outputs.is_merged == 'true'
         run: |
           git tag ${{ steps.version.outputs.version }}
           git push origin ${{ steps.version.outputs.version }}
